@@ -30,17 +30,24 @@
           value="all"
           id="all"
           v-model="viewOption">
-        <label class="button-inputs__label" for="all">
+        <label
+          class="button-inputs__label"
+          v-bind:class="getViewOptionClass('all')"
+          for="all">
           All Repos
         </label>
 
         <input
           class="button-inputs__radio-input"
+          v-bind:class="getViewOptionClass('starred')"
           type="radio"
           value="starred"
           id="starred"
           v-model="viewOption">
-        <label class="button-inputs__label" for="starred">
+        <label
+          class="button-inputs__label"
+          v-bind:class="getViewOptionClass('starred')"
+          for="starred">
           Starred By Me
         </label>
       </div>

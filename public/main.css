@@ -18,6 +18,11 @@ body {
 	font-weight: 100;
 }
 
+.content {
+	max-width: 1080px;
+	margin: auto;
+}
+
 .description {
 	padding: 1em 1em 0em 1em;
 	text-align: center;

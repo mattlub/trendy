@@ -61,9 +61,16 @@ new Vue({
       window.localStorage.setItem('starredRepos', updatedStarred)
     },
 
+    // conditional formatting
     getStarClass: function (repoId) {
       return this.starred.includes(repoId)
         ? 'repo__star-button--starred'
+        : ''
+    },
+
+    getViewOptionClass: function (option) {
+      return this.viewOption === option
+        ? 'button-inputs__label--selected'
         : ''
     }
   }
