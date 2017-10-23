@@ -1,0 +1,117 @@
+:root {
+	--link-color: #4fb1ff;
+	--header: linear-gradient(#c6e9ff, white);
+	--unselected: #c5c5c5;
+}
+
+body {
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.heading {
+	background: var(--header);
+	margin: 0;
+	padding: 0.8em;
+	text-align: center;
+	font-family: 'Passion One', cursive;
+	font-weight: 100;
+}
+
+.description {
+	padding: 1em 1em 0em 1em;
+	text-align: center;
+	line-height: 1.5em;
+}
+
+.button-inputs {
+	font-size: 1.1em;
+	text-align: center;
+	padding: 1em 0em;
+}
+
+.button-inputs__radio-input {
+	display: none;
+}
+
+.button-inputs__label {
+	padding: 0em 0em 0em 1em;
+	font-weight: 600;
+	color: var(--unselected);
+}
+
+.button-inputs__label--selected {
+	color: black;
+}
+
+.status-message {
+	/* TODO */
+}
+
+.block-list {
+	list-style: none;
+	padding: 0;
+}
+
+.repo {
+	display: flex;
+	border-top: 1px solid grey;
+	margin: 0em;
+	padding: 0em 0em 1em 0em;
+}
+
+
+.repo__star-section {
+	width: 10%;
+	padding: 1em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.repo__star-button {
+	margin-top: 0.5em;
+	background: none;
+	border: 0px solid black;
+	font-size: 2.5em;
+	color: var(--unselected);
+}
+
+.repo__star-button--starred {
+	color: dodgerblue;
+}
+
+.repo__star-button:hover {
+	cursor: pointer;
+}
+
+.repo__star-count {
+
+}
+
+.repo__info-section {
+	width: 90%;
+}
+
+.repo__name {
+	font-size: 1.3em;
+}
+
+.link {
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--link-color);
+}
+
+.link:hover {
+	text-decoration: none;
+}
+
+.language-tag {
+	font-size: 0.8em;
+	border: 1px solid grey;
+	background: white;
+	border-radius: 0.5em;
+	padding: 0.2em 0.5em;
+}
