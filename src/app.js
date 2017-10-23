@@ -46,8 +46,13 @@ new Vue({
     },
 
     filteredRepos: function () {
-      // TODO
-      return this.repos.slice(0, 10)
+      if (this.viewOption === 'starred') {
+        return this.repos
+          .filter(repo => this.starred.includes(repo.id))
+          .slice(0, 10)
+      } else {
+        return this.repos.slice(0, 10)
+      }
     },
 
     toggleStarred: function (idToToggle) {
