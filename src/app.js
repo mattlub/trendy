@@ -1,3 +1,5 @@
+import { updateStarredRepos } from './utils.js'
+
 const reposUrl = 'https://api.github.com/search/repositories?q=created:>2017-01-10&sort=stars&order=desc'
 
 new Vue({
@@ -38,7 +40,7 @@ new Vue({
       // local storage array comes back as string
       const starred = window.localStorage.getItem('starredRepos')
       const starredArray = starred
-        ? starred.split(',')
+        ? starred.split(',').map(Number)
         : []
       console.log({ starredArray })
       this.starred = starredArray
@@ -49,12 +51,15 @@ new Vue({
       return this.repos.slice(0, 10)
     },
 
-    toggleStarred: function (repoId) {
-
+    toggleStarred: function (idToToggle) {
+      const updatedStarred = updateStarredRepos(this.starred, idToToggle)
+      // set the starred repos here and in local storage
+      this.starred = updatedStarred
+      window.localStorage.setItem('starredRepos', updatedStarred)
     },
 
     starButtonLabel: function (repoId) {
-      return this.starred.inlcudes(repoId)
+      return this.starred.includes(repoId)
         ? 'Unstar'
         : 'Star'
     }
