@@ -6,6 +6,11 @@ A small app for discovering trending repositories on GitHub, made with Vue.js
 - Vue.js for making a simple app which is well-structured and readable
 - BEM for clear and reusable CSS 
 - Webpack to transpile ES6 for browser compatibility
+- QUnit for testing (because I had used it before)
+
+### Things learnt
+- multiple bundles with webpack
+- Vuex is a library which adds the Elm/Flux/Redux architecture to a Vue app
 
 ### Requirements
 - The idea of this project is to implement a small client application for discovering trending repositories on GitHub.
