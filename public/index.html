@@ -18,7 +18,7 @@
         id="all"
         v-model="viewOption">
       <label for="all">All Repos</label>
-      
+
       <input
         type="radio"
         name=""
@@ -32,7 +32,7 @@
     <p v-if="loading">Loading...</p>
 
     <ul>
-      <li v-for="repo in repos">
+      <li v-for="repo in filteredRepos()">
         <h3>{{ repo.name }}</h3>
         <p>{{ repo.description }}</p>
         <a :href="repo.html_url" target="_blank">Visit the repo on Github.</a>

@@ -6,6 +6,14 @@ const dummyData = [
     html_url: 'https://www.github.com',
     stargazers_count: 103,
     language: 'JavaScript'
+  },
+  {
+    id: 333444,
+    name: 'another one',
+    description: 'cool newer library',
+    html_url: 'https://www.github.com',
+    stargazers_count: 300,
+    language: 'Elm'
   }
 ]
 
@@ -18,11 +26,14 @@ new Vue({
     // viewOption can be "all" or "starred"
     viewOption: "all",
     repos: dummyData,
-    starred: []
+    starred: [ 123456 ]
   },
 
   methods: {
-    
+    filteredRepos: function () {
+      // TODO
+      return this.repos
+    }
   }
   
 })
