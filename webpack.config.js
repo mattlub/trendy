@@ -5,7 +5,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      {  
+      {
         test: /\/src\/(.*)\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
@@ -13,6 +13,6 @@ module.exports = {
           presets: ['es2015']
         }
       }
-    ],
+    ]
   }
 }

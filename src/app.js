@@ -27,7 +27,7 @@ new Vue({
     isLoading: true,
     hasErrored: false,
     // viewOption can be "all" or "starred"
-    viewOption: "all",
+    viewOption: 'all',
     repos: [],
     starred: []
   },
@@ -46,7 +46,8 @@ new Vue({
         this.repos = result.items
         this.isLoading = false
       })
-      .catch(err => {
+      .catch(fetchErr => {
+        console.log({ fetchErr })
         this.isLoading = false
         this.hasErrored = true
       })
@@ -56,7 +57,7 @@ new Vue({
       // local storage array comes back as string
       const starred = window.localStorage.getItem('starredRepos')
       const starredArray = starred
-        ? starred.split(",")
+        ? starred.split(',')
         : []
       console.log({ starredArray })
       this.starred = starredArray
@@ -67,5 +68,4 @@ new Vue({
       return this.repos.slice(0, 10)
     }
   }
-  
 })
