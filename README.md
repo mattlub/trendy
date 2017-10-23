@@ -1,7 +1,9 @@
 # Trending Github Repos
 
-A small app for discovering trending repositories on GitHub, made with Vue.js
+A small app for discovering trending repositories on GitHub, made with Vue.js.
+
 See it [here](https://mattlub.github.io/trendy/public/index.html).
+
 See the tests run [here](https://mattlub.github.io/trendy/tests/index.html).
 
 ### Design Decisions
