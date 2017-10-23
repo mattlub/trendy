@@ -8,8 +8,15 @@ A small app for discovering trending repositories on GitHub, made with Vue.js
 - Webpack to transpile ES6 for browser compatibility
 - QUnit for testing (because I had used it before)
 
-### Notes/improvements
-- responsive design
+### notes
+- CSS took me longer than I planned
+
+### improvements
+- fix out the design on mobile
+- style the status messages (loading, error)
+- more in depth testing of functionality
+- think about pagination
+- add languages filter
 
 ### Things learnt
 - multiple bundles with webpack
