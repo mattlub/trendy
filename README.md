@@ -1,6 +1,8 @@
 # Trending Github Repos
 
 A small app for discovering trending repositories on GitHub, made with Vue.js
+See it [here](https://mattlub.github.io/trendy/public/index.html).
+See the tests run [here](https://mattlub.github.io/trendy/tests/index.html).
 
 ### Design Decisions
 - Vue.js for making a simple app which is well-structured and readable
@@ -10,6 +12,7 @@ A small app for discovering trending repositories on GitHub, made with Vue.js
 
 ### notes
 - CSS took me longer than I planned
+- had to limit time for testing, as implementation took longer than expected.
 
 ### improvements
 - fix out the design on mobile
@@ -21,6 +24,7 @@ A small app for discovering trending repositories on GitHub, made with Vue.js
 ### Things learnt
 - multiple bundles with webpack
 - Vuex is a library which adds the Elm/Flux/Redux architecture to a Vue app
+- there's a lot to learn about testing with Vue
 
 -----------
 
