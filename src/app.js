@@ -2,6 +2,8 @@ import { updateStarredRepos } from './utils.js'
 
 const reposUrl = 'https://api.github.com/search/repositories?q=created:>2017-01-10&sort=stars&order=desc'
 
+const MAX_RESULTS = 20
+
 new Vue({
 
   el: '#app',
@@ -48,9 +50,9 @@ new Vue({
       if (this.viewOption === 'starred') {
         return this.repos
           .filter(repo => this.starred.includes(repo.id))
-          .slice(0, 10)
+          .slice(0, MAX_RESULTS)
       } else {
-        return this.repos.slice(0, 10)
+        return this.repos.slice(0, MAX_RESULTS)
       }
     },
 
@@ -67,7 +69,7 @@ new Vue({
         ? 'repo__star-button--starred'
         : ''
     },
-    
+
     getViewOptionClass: function (option) {
       return this.viewOption === option
         ? 'button-inputs__label--selected'
