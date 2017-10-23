@@ -33,6 +33,7 @@ new Vue({
   },
 
   created: function () {
+    // window.localStorage.setItem('starredRepos', ['id1', 'id2'])
     this.fetchRepos()
     this.fetchStarred()
   },
@@ -52,8 +53,13 @@ new Vue({
     },
 
     fetchStarred: function () {
-      //TODO
-      this.starred = [ 123456 ]
+      // local storage array comes back as string
+      const starred = window.localStorage.getItem('starredRepos')
+      const starredArray = starred
+        ? starred.split(",")
+        : []
+      console.log({ starredArray })
+      this.starred = starredArray
     },
 
     filteredRepos: function () {
