@@ -1,22 +1,3 @@
-const dummyData = [
-  {
-    id: 123456,
-    name: 'test',
-    description: 'cool new library',
-    html_url: 'https://www.github.com',
-    stargazers_count: 103,
-    language: 'JavaScript'
-  },
-  {
-    id: 333444,
-    name: 'another one',
-    description: 'cool newer library',
-    html_url: 'https://www.github.com',
-    stargazers_count: 300,
-    language: 'Elm'
-  }
-]
-
 const reposUrl = 'https://api.github.com/search/repositories?q=created:>2017-01-10&sort=stars&order=desc'
 
 new Vue({
@@ -66,6 +47,16 @@ new Vue({
     filteredRepos: function () {
       // TODO
       return this.repos.slice(0, 10)
+    },
+
+    toggleStarred: function (repoId) {
+
+    },
+
+    starButtonLabel: function (repoId) {
+      return this.starred.inlcudes(repoId)
+        ? 'Unstar'
+        : 'Star'
     }
   }
 })
