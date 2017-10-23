@@ -16,7 +16,6 @@ new Vue({
   },
 
   created: function () {
-    // window.localStorage.setItem('starredRepos', ['id1', 'id2'])
     this.fetchRepos()
     this.fetchStarred()
   },

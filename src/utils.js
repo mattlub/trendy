@@ -1,4 +1,4 @@
-// takes an array of repo id's and an id of the repo to toggle
+// takes an array of (integer) repo id's and an (integer) id of the repo to toggle
 // return a new array of repo id's
 export const updateStarredRepos = (currentStarred, idToToggle) => {
   return currentStarred.includes(idToToggle)
