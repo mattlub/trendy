@@ -67,11 +67,18 @@ new Vue({
         ? 'repo__star-button--starred'
         : ''
     },
-
+    
     getViewOptionClass: function (option) {
       return this.viewOption === option
         ? 'button-inputs__label--selected'
         : ''
+    },
+
+    // adds one to star count if it is starred in local storage
+    getStarCount: function (repoId, count) {
+      return this.starred.includes(repoId)
+        ? count + 1
+        : count
     }
   }
 })

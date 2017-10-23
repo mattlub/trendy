@@ -71,7 +71,7 @@
               <!-- unicode for star symbol -->
               &#9733
             </button>
-            <p class=repo__star-count">{{ repo.stargazers_count }}</p>
+            <p class=repo__star-count">{{ getStarCount(repo.id, repo.stargazers_count) }}</p>
           </div>
 
           <div class="repo__info-section">
