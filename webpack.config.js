@@ -1,8 +1,4 @@
-module.exports = {
-  entry: './src/app.js',
-  output: {
-    filename: './public/bundle.js'
-  },
+const sharedConfig = {
   module: {
     loaders: [
       {
@@ -16,3 +12,21 @@ module.exports = {
     ]
   }
 }
+
+var appConfig = Object.assign({}, sharedConfig, {
+  entry: './src/app.js',
+  output: {
+    filename: './public/bundle.js'
+  },
+})
+
+var testConfig = Object.assign({}, sharedConfig, {
+  entry: './tests/index.test.js',
+  output: {
+    filename: './tests/bundle.js'
+  },
+})
+
+module.exports = [
+  appConfig, testConfig,     
+]

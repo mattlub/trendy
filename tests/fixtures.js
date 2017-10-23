@@ -17,4 +17,12 @@ const repos = [
   }
 ]
 
-module.exports = { repos }
+const starred = [
+  123456,
+  111111,
+  222222,
+  333333,
+  444444
+]
+
+module.exports = { repos, starred }
