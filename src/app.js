@@ -30,7 +30,7 @@ new Vue({
   },
 
   created: function () {
-    this.fetchData()
+    this.fetchRepos()
     this.fetchStarred()
   },
 
