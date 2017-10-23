@@ -17,12 +17,15 @@ const dummyData = [
   }
 ]
 
+const reposUrl = 'https://api.github.com/search/repositories?q=created:>2017-01-10&sort=stars&order=desc'
+
 new Vue({
 
   el: '#app',
 
   data: {
-    loading: true,
+    isLoading: true,
+    hasErrored: false,
     // viewOption can be "all" or "starred"
     viewOption: "all",
     repos: [],
@@ -36,9 +39,16 @@ new Vue({
 
   methods: {
     fetchRepos: function () {
-      // TODO
-      this.repos = dummyData
-      this.loading = false
+      fetch(reposUrl)
+      .then(response => response.json())
+      .then(result => {
+        this.repos = result.items
+        this.isLoading = false
+      })
+      .catch(err => {
+        this.isLoading = false
+        this.hasErrored = true
+      })
     },
 
     fetchStarred: function () {
@@ -48,7 +58,7 @@ new Vue({
 
     filteredRepos: function () {
       // TODO
-      return this.repos
+      return this.repos.slice(0, 10)
     }
   }
   

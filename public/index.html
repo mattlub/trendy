@@ -29,7 +29,9 @@
       <label for="starred">Starred By Me</label>
     </div>
 
-    <p v-if="loading">Loading...</p>
+    <p v-if="isLoading">Loading...</p>
+
+    <p v-if="hasErrored">There was an error loading repositories :( Please try to refresh the page!</p>
 
     <ul>
       <li v-for="repo in filteredRepos()">
