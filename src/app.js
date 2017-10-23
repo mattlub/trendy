@@ -25,11 +25,27 @@ new Vue({
     loading: true,
     // viewOption can be "all" or "starred"
     viewOption: "all",
-    repos: dummyData,
-    starred: [ 123456 ]
+    repos: [],
+    starred: []
+  },
+
+  created: function () {
+    this.fetchData()
+    this.fetchStarred()
   },
 
   methods: {
+    fetchRepos: function () {
+      // TODO
+      this.repos = dummyData
+      this.loading = false
+    },
+
+    fetchStarred: function () {
+      //TODO
+      this.starred = [ 123456 ]
+    },
+
     filteredRepos: function () {
       // TODO
       return this.repos
