@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Welcome to Vue</title>
+  <title>Popular Github Repos</title>
+  <link rel="stylesheet" type="text/css" href="./main.css">
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
   <div id="app">
-    <img src="https://vuejs.org/images/logo.png" alt="Vue logo">
-    <h1>{{ greeting }}</h1>
+    <h1>Popular Github Repositories</h1>
+    <p>Small description of the site</p>
+
+    <div>
+      <input
+        type="radio"
+        name=""
+        value="all"
+        id="all"
+        v-model="viewOption">
+      <label for="all">All Repos</label>
+      
+      <input
+        type="radio"
+        name=""
+        value="starred"
+        id="starred"
+        v-model="viewOption"
+      >
+      <label for="starred">Starred By Me</label>
+    </div>
+
+    <p v-if="loading">Loading...</p>
+
     <ul>
-      <li>
-        To learn more about Vue, visit
-        <a :href="docsURL" target="_blank">
-          {{ humanizeURL(docsURL) }}
-        </a>
+      <li v-for="repo in repos">
+        <h3>{{ repo.name }}</h3>
+        <p>{{ repo.description }}</p>
+        <a :href="repo.html_url" target="_blank">Visit the repo on Github.</a>
+        <p>Stars: {{ repo.stargazers_count }}</p>
       </li>
-      <li>
-        For live help with simple questions, check out
-        <a :href="gitterURL" target="_blank">
-          the Gitter chat
-        </a>
-      </li>
-      <li>
-        For more complex questions, post to
-        <a :href="forumURL" target="_blank">
-          the forum
-        </a>
-      </li>
-    </ul>
+   </ul>
   </div>
 
 <script type="application/javascript" src="./bundle.js"></script>

@@ -1,20 +1,28 @@
+const dummyData = [
+  {
+    id: 123456,
+    name: 'test',
+    description: 'cool new library',
+    html_url: 'https://www.github.com',
+    stargazers_count: 103,
+    language: 'JavaScript'
+  }
+]
+
 new Vue({
 
   el: '#app',
 
   data: {
-    greeting: 'Welcome to your Vue.js app!',
-    docsURL: 'http://vuejs.org/guide/',
-    gitterURL: 'https://gitter.im/vuejs/vue',
-    forumURL: 'http://forum.vuejs.org/'
+    loading: true,
+    // viewOption can be "all" or "starred"
+    viewOption: "all",
+    repos: dummyData,
+    starred: []
   },
 
   methods: {
-    humanizeURL: function (url) {
-      return url
-        .replace(/^https?:\/\//, '')
-        .replace(/\/$/, '')
-    }
+    
   }
   
 })
