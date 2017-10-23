@@ -41,7 +41,6 @@ new Vue({
       const starredArray = starred
         ? starred.split(',').map(Number)
         : []
-      console.log({ starredArray })
       this.starred = starredArray
     },
 
@@ -62,10 +61,10 @@ new Vue({
       window.localStorage.setItem('starredRepos', updatedStarred)
     },
 
-    starButtonLabel: function (repoId) {
+    getStarClass: function (repoId) {
       return this.starred.includes(repoId)
-        ? 'Unstar'
-        : 'Star'
+        ? 'repo__star-button--starred'
+        : ''
     }
   }
 })

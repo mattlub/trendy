@@ -57,7 +57,10 @@
 
         <li class="repo" v-for="repo in filteredRepos()">
           <div class="repo__star-section">
-            <button class="repo__star-button" v-on:click="toggleStarred(repo.id)">
+            <button
+              class="repo__star-button"
+              v-bind:class="getStarClass(repo.id)"
+              v-on:click="toggleStarred(repo.id)">
               <!-- unicode for star symbol -->
               &#9733
             </button>
