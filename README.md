@@ -2,6 +2,11 @@
 
 A small app for discovering trending repositories on GitHub, made with Vue.js
 
+### Design Decisions
+- Vue.js for making a simple app which is well-structured and readable
+- BEM for clear and reusable CSS 
+- Webpack to transpile ES6 for browser compatibility
+
 ### Requirements
 - The idea of this project is to implement a small client application for discovering trending repositories on GitHub.
 - A list of the most popular repositories of the last week should be displayed and the user should be able to star them.
